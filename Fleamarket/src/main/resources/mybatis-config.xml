@@ -5,6 +5,11 @@
 
 <configuration>
 	<typeAliases>
-		<!-- <package name="org.zerock.domain"/> -->
+		<package name="com.sp.board.domain"/>
+		<package name="com.sp.mainDetail.domain"/>
+		<package name="com.sp.memManage.domain"/>
+		<package name="com.sp.payment.domain"/>
+		<package name="com.sp.product.domain"/>
+		<package name="com.sp.safepay.domain"/>
 	</typeAliases>
 </configuration>

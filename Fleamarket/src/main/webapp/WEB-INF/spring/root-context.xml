@@ -15,8 +15,8 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
-		<property name="username" value="kosta186" />
-		<property name="password" value="1234" />
+		<property name="username" value="flmarket" />
+		<property name="password" value="flmarket" />
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -39,7 +39,25 @@
 
 	<!-- <context:component-scan base-package="org.zerock.persistence"></context:component-scan>
 
-	<context:component-scan base-package="org.zerock.service"></context:component-scan>
-
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
+	<context:component-scan base-package="org.zerock.service"></context:component-scan> -->
+	
+	<context:component-scan base-package="com.sp.board.model"></context:component-scan>
+	<context:component-scan base-package="com.sp.board.service"></context:component-scan>
+	
+	<context:component-scan base-package="com.sp.mainDetai.model"></context:component-scan>
+	<context:component-scan base-package="com.sp.mainDetai.service"></context:component-scan>
+	
+	<context:component-scan base-package="com.sp.memManage.model"></context:component-scan>
+	<context:component-scan base-package="com.sp.memManage.service"></context:component-scan>
+	
+	<context:component-scan base-package="com.sp.payment.model"></context:component-scan>
+	<context:component-scan base-package="com.sp.payment.service"></context:component-scan>
+	
+	<context:component-scan base-package="com.sp.product.model"></context:component-scan>
+	<context:component-scan base-package="com.sp.product.service"></context:component-scan>
+	
+	<context:component-scan base-package="com.sp.safepay.model"></context:component-scan>
+	<context:component-scan base-package="com.sp.safepay.service"></context:component-scan>
+	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 </beans>

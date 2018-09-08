@@ -32,7 +32,7 @@
 	<!-- uploadPath 로 어노테이션 이용해서 경로 가져오기 위해 아래 처럼 설정 -->
 	<beans:bean id="uploadPath" class="java.lang.String">
 		<beans:constructor-arg
-			value="C:/Java Web Pro2/java/spring_work2/ex01/src/main/webapp/resources/upload"></beans:constructor-arg>
+			value="C:/Users/Du/git/Fleamarket_sp/Fleamarket/src/main/webapp/resources/upload"></beans:constructor-arg>
 	</beans:bean>
 	
 </beans:beans>
