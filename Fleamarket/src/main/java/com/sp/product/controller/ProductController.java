@@ -14,7 +14,7 @@ import com.sp.bean.Bean;
 public class ProductController {
 	
 	//뷰단의 파일 이름 형식은 각각의 상단의 (상위 이름/하단의 메소드 벨류이름) 으로 결정됨 
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/productlist", method = RequestMethod.GET)
 	public void home(Locale locale, Model model, HttpServletRequest request) {
 		//컨트롤러에서 빈 파일에 필요한 객체 담은후 모델에 빈을 담아서 뷰에서 사용
 		Bean bean = new Bean();

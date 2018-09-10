@@ -72,8 +72,17 @@
 			<mapping path="/memmanage/loginpost"/>
 			<beans:ref bean="loginInterceptor"/>
 		</interceptor>
+		
+		<interceptor><!-- 로그인 필요한 페이지 정의해야함 -->
+			<mapping path=""/>
+			<mapping path=""/>
+			<mapping path=""/>
+			<beans:ref bean="authInterceptor"/>
+		</interceptor>
 
 	</interceptors>
+	
+	
 	
 	<!--END 인터셉터 설정 -->
 	
