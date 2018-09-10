@@ -32,7 +32,6 @@ public class ProductController {
 		}*/
 		
 		
-		
 		model.addAttribute("bean", bean );
 		
 	}
