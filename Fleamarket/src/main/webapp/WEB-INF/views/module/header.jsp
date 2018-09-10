@@ -9,7 +9,7 @@
 </head>
 <body>
 헤더 부분
-	<div id="headmenu">
+	<div id="topmenu">
 		<ul>
 			<li><a href="/fleamarket/board/customerCenterList.do" id="notice">NOTICE</a></li>
 			<c:if test="${member != null }">
@@ -26,6 +26,31 @@
 			</c:choose>
 		</ul>
 	</div>
+	
+	
+	
+	<div id="bottommenu">
+    <ul>
+      <li id="market"><a
+        href="http://localhost:8081/Fleamarket/maindetail/main">FleaMarket</a>
+      </li>
+      <li>
+        <form action="/fleamarket/product/searchall" id="searchForm">
+          <input type="text" placeholder="상품명" class="search-box-input" name="searchSubj">
+          <input type="submit" value="검 색" class="icon-search" id="subbtn">
+        </form>
+      </li>
+      <div id="secondmenu">
+        <c:if test="${member != null }">
+          <li class="detailmenu"><a href="/fleamarket/product/productlist?member_email=${member.member_email }" class="btn">MYSTORE</a></li>
+          <li class="detailmenu"><a href="/fleamarket/memmanage/detailAction?member_email=${member.member_email }" class="btn">MYINFO</a></li>
+        </c:if>
+      </div>
+      <!--       secondmenu -->
+    </ul>
+  </div>
+  <!--   bottommenu -->
+	
 
 </body>
 </html>
