@@ -5,6 +5,10 @@
 
 <mapper namespace="MemManageMapper">
 	<cache />
-
-
+	
+	
+	<select id="loginMember" parameterType="MemManageDTO" resultType="MemManageDTO">
+		select * from member where member_email=#{member_email} and member_pw=#{member_pw}
+	</select>
+	
 </mapper>

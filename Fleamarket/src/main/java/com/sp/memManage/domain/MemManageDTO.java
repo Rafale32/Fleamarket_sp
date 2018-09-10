@@ -4,105 +4,105 @@ import java.io.Serializable;
 import java.util.List;
 
 public class MemManageDTO implements Serializable { // 마이바티스는 DTO 로 사용하는 객체 무조건
-// 시리얼라이즈 필수적으로 해줘야함
-private String email; // 이메일
-private String password; // 패스워드
-private String name; // 이름
-private String phone; // 전화번호
-private String address; // 주소
-private String address2; // 상세주소
-private int point; // 포인트
-private String state; // 회원 상태
-private String stop_start; // 정지 시작일
-private String stop_end; // 정지 종료일
-private int admin; // 관리자 상태확인
+	// 시리얼라이즈 필수적으로 해줘야함
+	private String member_email; // 이메일
+	private String member_pw; // 패스워드
+	private String member_name; // 이름
+	private String member_phone; // 전화번호
+	private String member_address; // 주소
+	private String member_address2; // 상세주소
+	private int member_point; // 포인트
+	private String member_state; // 회원 상태
+	private String member_stop_start_date; // 정지 시작일
+	private String member_stop_end; // 정지 종료일
+	private int member_admin; // 관리자 상태확인
 
-	public String getEmail() {
-		return email;
+	public String getMember_email() {
+		return member_email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMember_email(String member_email) {
+		this.member_email = member_email;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getMember_pw() {
+		return member_pw;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setMember_pw(String member_pw) {
+		this.member_pw = member_pw;
 	}
 
-	public String getName() {
-		return name;
+	public String getMember_name() {
+		return member_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMember_name(String member_name) {
+		this.member_name = member_name;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getMember_phone() {
+		return member_phone;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setMember_phone(String member_phone) {
+		this.member_phone = member_phone;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getMember_address() {
+		return member_address;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setMember_address(String member_address) {
+		this.member_address = member_address;
 	}
 
-	public String getAddress2() {
-		return address2;
+	public String getMember_address2() {
+		return member_address2;
 	}
 
-	public void setAddress2(String address2) {
-		this.address2 = address2;
+	public void setMember_address2(String member_address2) {
+		this.member_address2 = member_address2;
 	}
 
-	public int getPoint() {
-		return point;
+	public int getMember_point() {
+		return member_point;
 	}
 
-	public void setPoint(int point) {
-		this.point = point;
+	public void setMember_point(int member_point) {
+		this.member_point = member_point;
 	}
 
-	public String getState() {
-		return state;
+	public String getMember_state() {
+		return member_state;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setMember_state(String member_state) {
+		this.member_state = member_state;
 	}
 
-	public String getStop_start() {
-		return stop_start;
+	public String getMember_stop_start_date() {
+		return member_stop_start_date;
 	}
 
-	public void setStop_start(String stop_start) {
-		this.stop_start = stop_start;
+	public void setMember_stop_start_date(String member_stop_start_date) {
+		this.member_stop_start_date = member_stop_start_date;
 	}
 
-	public String getStop_end() {
-		return stop_end;
+	public String getMember_stop_end() {
+		return member_stop_end;
 	}
 
-	public void setStop_end(String stop_end) {
-		this.stop_end = stop_end;
+	public void setMember_stop_end(String member_stop_end) {
+		this.member_stop_end = member_stop_end;
 	}
 
-	public int getAdmin() {
-		return admin;
+	public int getMember_admin() {
+		return member_admin;
 	}
 
-	public void setAdmin(int admin) {
-		this.admin = admin;
+	public void setMember_admin(int member_admin) {
+		this.member_admin = member_admin;
 	}
 
 }

@@ -4,11 +4,16 @@
 <head>
 	<title>Home</title>
 </head>
+<script type="text/javascript">
+	location.href = "maindetail/mmain";
+</script>
 <body>
-<h1>
+<%-- <h1>
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>  The time on the server is ${serverTime}. </P> --%>
+
+
 </body>
 </html>

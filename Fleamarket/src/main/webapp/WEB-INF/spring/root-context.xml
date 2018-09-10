@@ -15,8 +15,8 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
-		<property name="username" value="flmarket" />
-		<property name="password" value="flmarket" />
+		<property name="username" value="flmarket2" />
+		<property name="password" value="flmarket2" />
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -34,12 +34,9 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
+	
 
 	<tx:annotation-driven />
-
-	<!-- <context:component-scan base-package="org.zerock.persistence"></context:component-scan>
-
-	<context:component-scan base-package="org.zerock.service"></context:component-scan> -->
 	
 	<context:component-scan base-package="com.sp.board.model"></context:component-scan>
 	<context:component-scan base-package="com.sp.board.service"></context:component-scan>

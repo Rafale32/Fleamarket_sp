@@ -4,6 +4,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.sp.memManage.domain.MemManageDTO;
+
 @Repository
 public class MemManageDAOImpl implements MemManageDAO{
 	
@@ -15,6 +17,12 @@ public class MemManageDAOImpl implements MemManageDAO{
 	@Override
 	public void create() throws Exception {
 		//session.insert(namespace + ".create", vo);
+	}
+	
+	@Override
+	public MemManageDTO checkLogin(MemManageDTO dto) throws Exception {
+		
+		return session.selectOne(namespace+".loginMember", dto);
 	}
 	
 }
