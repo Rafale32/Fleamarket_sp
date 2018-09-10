@@ -84,7 +84,7 @@
 		<put-attribute name="body" value="/WEB-INF/views/product/{1}.jsp" />
 	</definition>
 	
-	<definition name="safepay/*" extends="left_layout">
+	<definition name="payment/*" extends="left_layout">
 		<put-attribute name="body" value="/WEB-INF/views/product/{1}.jsp" />
 	</definition>
 	
