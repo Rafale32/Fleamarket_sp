@@ -34,7 +34,7 @@
 
 	<!-- Root Logger -->
 	<root>
-		<priority value="info" />
+		<priority value="error" /><!-- info 와 warn error 세가지 이고 warn은 워닝까지 info 는 전부 error 은 에러난거만로-->
 		<appender-ref ref="console" />
 	</root>
 	

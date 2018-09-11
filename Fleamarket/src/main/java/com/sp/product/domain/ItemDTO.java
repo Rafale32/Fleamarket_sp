@@ -9,21 +9,22 @@ public class ItemDTO implements Serializable{ //마이바티스는 DTO 로 사�
 	//이미지 여러게 담는곳 
 	List<ItemImg> itemImgList;
 	
-	private String email;// 현재 사용자 아이디
+	private String member_email;// 현재 사용자 아이디
 	private int sub_No; //섭카테고리 넘버
 	private String category_Title; //대 카테고리 이름 CATEGORY_TITLE
 	private String sub_Title; // 소 카테고리 이름
 	private Date itemboard_Date; //등록일자
-	private String local; //거래지역
-	private String title; // 상품게시판 의 상품 제목
+	private String itemboard_Local; //거래지역
+	private String itemboard_Title; // 상품게시판 의 상품 제목
 	private String itemboard_Contents; // 상품게시판의 상품설명 //여기에 잠시 담자 썸네일 이미지 하나짜리
 	private String tag;// 태그
-	private int hits; //조회수
-	private int recommend_Ornot; //추천상품  구현안할듯 지금은 
-	private int change_Ornot; //교환 가능 여부
+	private int itemboard_Viewcount; //조회수
+	private int itemboard_Recommend_b; //추천상품  구현안할듯 지금은 
+	private int itemboard_Change_b; //교환 가능 여부
 	private int item_No; // 상품 번호
 	private int itemboard_No = 0; // 게시판글 번호
-	private int store_no; // 상점 번호
+	private int store_No; // 상점 번호
+	private int itemboard_Delete_B;//삭제 유무
 	
 	private int price; //물품 가격
 	
@@ -36,18 +37,17 @@ public class ItemDTO implements Serializable{ //마이바티스는 DTO 로 사�
 	private int amount; //상품 수량
 
 	// 20180818 재헌 상점이름, 배송 유무
-	private String store_name;
+	private String store_Name;
 	// private String delivery_fee;
 	// 20180818 재헌 배송진행상태
-	private int delivery_state;
+	private int delivery_State;
 	
 	
 	
 	public ItemDTO() { }
-	
-	
-	
-	
+
+
+
 	public List<ItemImg> getItemImgList() {
 		return itemImgList;
 	}
@@ -57,17 +57,15 @@ public class ItemDTO implements Serializable{ //마이바티스는 DTO 로 사�
 	public void setItemImgList(List<ItemImg> itemImgList) {
 		this.itemImgList = itemImgList;
 	}
-
-
-
-	public String getEmail() {
-		return email;
+	
+	public String getMember_email() {
+		return member_email;
 	}
 
 
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMember_email(String member_email) {
+		this.member_email = member_email;
 	}
 
 
@@ -120,26 +118,26 @@ public class ItemDTO implements Serializable{ //마이바티스는 DTO 로 사�
 
 
 
-	public String getLocal() {
-		return local;
+	public String getItemboard_Local() {
+		return itemboard_Local;
 	}
 
 
 
-	public void setLocal(String local) {
-		this.local = local;
+	public void setItemboard_Local(String itemboard_Local) {
+		this.itemboard_Local = itemboard_Local;
 	}
 
 
 
-	public String getTitle() {
-		return title;
+	public String getItemboard_Title() {
+		return itemboard_Title;
 	}
 
 
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setItemboard_Title(String itemboard_Title) {
+		this.itemboard_Title = itemboard_Title;
 	}
 
 
@@ -168,38 +166,38 @@ public class ItemDTO implements Serializable{ //마이바티스는 DTO 로 사�
 
 
 
-	public int getHits() {
-		return hits;
+	public int getItemboard_Viewcount() {
+		return itemboard_Viewcount;
 	}
 
 
 
-	public void setHits(int hits) {
-		this.hits = hits;
+	public void setItemboard_Viewcount(int itemboard_Viewcount) {
+		this.itemboard_Viewcount = itemboard_Viewcount;
 	}
 
 
 
-	public int getRecommend_Ornot() {
-		return recommend_Ornot;
+	public int getItemboard_Recommend_b() {
+		return itemboard_Recommend_b;
 	}
 
 
 
-	public void setRecommend_Ornot(int recommend_Ornot) {
-		this.recommend_Ornot = recommend_Ornot;
+	public void setItemboard_Recommend_b(int itemboard_Recommend_b) {
+		this.itemboard_Recommend_b = itemboard_Recommend_b;
 	}
 
 
 
-	public int getChange_Ornot() {
-		return change_Ornot;
+	public int getItemboard_Change_b() {
+		return itemboard_Change_b;
 	}
 
 
 
-	public void setChange_Ornot(int change_Ornot) {
-		this.change_Ornot = change_Ornot;
+	public void setItemboard_Change_b(int itemboard_Change_b) {
+		this.itemboard_Change_b = itemboard_Change_b;
 	}
 
 
@@ -228,14 +226,26 @@ public class ItemDTO implements Serializable{ //마이바티스는 DTO 로 사�
 
 
 
-	public int getStore_no() {
-		return store_no;
+	public int getStore_No() {
+		return store_No;
 	}
 
 
 
-	public void setStore_no(int store_no) {
-		this.store_no = store_no;
+	public void setStore_No(int store_No) {
+		this.store_No = store_No;
+	}
+
+
+
+	public int getItemboard_Delete_B() {
+		return itemboard_Delete_B;
+	}
+
+
+
+	public void setItemboard_Delete_B(int itemboard_Delete_B) {
+		this.itemboard_Delete_B = itemboard_Delete_B;
 	}
 
 
@@ -312,42 +322,31 @@ public class ItemDTO implements Serializable{ //마이바티스는 DTO 로 사�
 
 
 
-	public String getStore_name() {
-		return store_name;
+	public String getStore_Name() {
+		return store_Name;
 	}
 
 
 
-	public void setStore_name(String store_name) {
-		this.store_name = store_name;
+	public void setStore_Name(String store_Name) {
+		this.store_Name = store_Name;
 	}
 
 
 
-	public int getDelivery_state() {
-		return delivery_state;
+	public int getDelivery_State() {
+		return delivery_State;
 	}
 
 
 
-	public void setDelivery_state(int delivery_state) {
-		this.delivery_state = delivery_state;
+	public void setDelivery_State(int delivery_State) {
+		this.delivery_State = delivery_State;
 	}
+
+
 	
 	
-	
-	
-	@Override
-	public String toString() {
-		return "ItemDTO [itemImgList=" + itemImgList + ", email=" + email + ", sub_No=" + sub_No + ", category_Title="
-				+ category_Title + ", sub_Title=" + sub_Title + ", itemboard_Date=" + itemboard_Date + ", local="
-				+ local + ", title=" + title + ", itemboard_Contents=" + itemboard_Contents + ", tag=" + tag + ", hits="
-				+ hits + ", recommend_Ornot=" + recommend_Ornot + ", change_Ornot=" + change_Ornot + ", item_No="
-				+ item_No + ", itemboard_No=" + itemboard_No + ", store_no=" + store_no + ", price=" + price
-				+ ", favCount=" + favCount + ", itemQnaCount=" + itemQnaCount + ", item_State=" + item_State
-				+ ", delivery_Fee=" + delivery_Fee + ", amount=" + amount + ", store_name=" + store_name
-				+ ", delivery_state=" + delivery_state + "]";
-	}
 	
 	
 	

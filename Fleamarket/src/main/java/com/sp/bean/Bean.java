@@ -15,6 +15,7 @@ import com.sp.mainDetail.domain.StoreInfoDTO;
 import com.sp.mainDetail.domain.SubCategoryDTO;
 import com.sp.memManage.domain.MemManageDTO;
 import com.sp.memManage.domain.StoreDTO;
+import com.sp.product.domain.CateDTO;
 import com.sp.product.domain.ItemDTO;
 import com.sp.product.domain.PageModel;
 import com.sp.safepay.domain.DeliveryDTO_jh;
@@ -25,7 +26,7 @@ import com.sp.safepay.domain.SpellDTO_jh;
 
 
 
-public class Bean {
+public class Bean  {
 	
 
 	// 20180816,재헌 DeliveryDTO 추가
@@ -42,8 +43,9 @@ public class Bean {
 	//두연
 	List<ItemDTO> itemList;
 	private HttpServletRequest request;
-	List<String> cateList; //카테고리 리스트  //수정 폼에서는 대 카테로 쓰임
+	//List<String> cateList; //카테고리 리스트  //수정 폼에서는 대 카테로 쓰임
 	List<String> sub_cateList; // 물품 수정폼에서 쓰기위해 만듬
+	List<CateDTO> cateList;//대분류 카테고리 객체 리스트
 	PageModel pageModel;//페이지 처리위한넘
 	
 	//추천상품리스트 추가
@@ -125,10 +127,11 @@ public class Bean {
 	public void setRequest(HttpServletRequest request) {
 		this.request = request;
 	}
-	public List<String> getCateList() {
+	
+	public List<CateDTO> getCateList() {
 		return cateList;
 	}
-	public void setCateList(List<String> cateList) {
+	public void setCateList(List<CateDTO> cateList) {
 		this.cateList = cateList;
 	}
 	public List<String> getSub_cateList() {
