@@ -20,14 +20,37 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+ <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <link rel="stylesheet" href="../gy_css/buySellTable.css" type="text/css">
-
+<link href="../resources/boot/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+  type="text/css" />
+  
+  <script src="/resources/payment/cangeDeliveryst_gy.js" type="text/javascript"> 
+  </script>
+  <script type="text/javascript">
+  window.onload = function() {
+	  var header = document.getElementById('purchaseDetermin');
+		 header.onclick = function (){
+		  var con_test = confirm("판매 승인을 하시겠습니까?");
+		  if(con_test == true){
+		    alert("승인 확정 되었습니다.");
+		  }
+		  else if(con_test == false){
+		    alert("취소 되었습니다.");
+		    return false;
+		  }
+		};
+	  
+  };
+  
+  </script>
 </head>
 <body>
 
 
-	<table id="sell_list_table">
-		<c:forEach var = "p" items="${SellModel2.list}">
+	<table id="sell_list_table" class="table">
+		<c:forEach var = "p" items="${list}">
 		<tr>
 			<td colspan="4" class="date">날자부 :${p.pay_date }</td>
 		</tr>
@@ -36,25 +59,25 @@
 			<!-- 테이블 내용-->
 			<tr>
 			<!-- 추후 이미지 경로 src 만 수정 하면 됨 -->
-				<td> <%-- ${p.thum_img} --%> <img alt="물품임시이미지" src="../img/${p.thum_img}.jpg" width="200px" height="150px"></td>
+				<td> <%-- ${p.thum_img} --%> <img alt="물품임시이미지" src="/fleamarket/resources/payment/img/${p.thum_img}.jpg" width="200px" height="150px"></td>
 				
 				<td>
 				<!-- 거래 상태를 볼수 있는 코드 1~4까지 있고 설명을 적어 놓았고 나중에 이미지 파일로 변경하면 됨  -->
 				 <c:choose>
-						<c:when test="${p.delivery_state == 1}">
-						<img alt="배송이미지" src="../img/d1.png">
+						<c:when test="${p.item_delivery_state == 1}">
+						<img alt="배송이미지" src="/fleamarket/resources/payment/img/d1.png">
 						
 						</c:when>
-						<c:when test="${p.delivery_state == 2}">
-						<img alt="배송이미지" src="../img/d2.png">
+						<c:when test="${p.item_delivery_state == 2}">
+						<img alt="배송이미지" src="/fleamarket/resources/payment/img/d2.png">
 					
 						</c:when>
-						<c:when test="${p.delivery_state == 3}">
-						<img alt="배송이미지" src="../img/d3.png">
+						<c:when test="${p.item_delivery_state == 3}">
+						<img alt="배송이미지" src="/fleamarket/resources/payment/img/d3.png">
 				
 						</c:when>
-						<c:when test="${p.delivery_state == 4}">
-						<img alt="배송이미지" src="../img/d4.png">
+						<c:when test="${p.item_delivery_state == 4}">
+						<img alt="배송이미지" src="/fleamarket/resources/payment/img/d4.png">
 					
 						</c:when>
 					<c:otherwise>
@@ -66,18 +89,19 @@
 				</td>
 
 				<td>
-					<h2>제목(상품명) ${p.title}</h2>
-					<h2>판매금액 ${p.price }</h2>
+				<!-- 판매 = 내 상점으로 이동하기  -->
+					<a href="">  <h2>제목(상품명) ${p.itemboard_title}</h2> </a>
+					<h3>판매금액 ${p.item_price}</h3>
 
 				</td>
 
 				<td>
-					<form action="changeDeliverySellChack_gy.gg">
+					<form action="/fleamarket/payment/sell_list_gy" method="post">
 				<!-- style="display: none;"  나중에 넣어서 추가 할것-->
-					<c:if test="${p.delivery_state == 2}">
+					<c:if test="${p.item_delivery_state == 2}">
 					<input type="text" id="pageNo" name="pageNo" value=${SellModel2.requestPage }>
 					<input type="text" id="item_no" name="item_no" value=${p.item_no } >
-					<input type="submit" id="purchaseDetermin" class="purchaseDetermin" value="판매승인버튼" >
+					<input type="submit" id="purchaseDetermin" class="btn" value="판매승인버튼" >
 					</c:if>
 					
 					<h2>리뷰확인버튼</h2>

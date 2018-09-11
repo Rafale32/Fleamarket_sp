@@ -28,5 +28,25 @@ public class PaymentServiceImpl implements PaymentService {
 		return dao.listPuerchase(dto);
 	}
 
+	
+	@Override
+	public void changDeliverState(DeliveryDTO_gy dto) throws Exception {
+		dao.changDeliverState(dto);
+		
+	}
+
+	
+	@Override
+	public List<PuerchaseDTO_gy> listSell(DeliveryDTO_gy dto) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.listSell(dto);
+	}
+
+	@Override
+	public void changDeliverState2(DeliveryDTO_gy dto) throws Exception {
+		dao.changDeliverState2(dto);
+		
+	}
+
 
 }

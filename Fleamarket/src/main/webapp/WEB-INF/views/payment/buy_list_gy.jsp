@@ -30,9 +30,13 @@
 
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+<link href="../resources/boot/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+  type="text/css" />
 <script type="text/javascript"> </script>
 <style type="text/css">
 </style>
+<script type="text/javascript" src="../resources/payment/js/cangeDeliveryst_gy.js"></script>
+<script type="text/javascript"></script>
 
 </head>
 <body>
@@ -50,7 +54,7 @@
 			<%-- 왼쪽이미지 ${p.thum_img}   width="200px" height="150px"--%>
 				<td> 
 				
-				<img alt="물품임시이미지" src="/fleamarket/resources/img/${p.thum_img}.jpg" width="200px" height="150px" style="margin-left: 50px;">
+				<img alt="물품임시이미지" src="/fleamarket/resources/payment/img/${p.thum_img}.jpg" width="200px" height="150px" style="margin-left: 50px;">
 				
 				</td>
 
@@ -83,21 +87,23 @@
 
 
 				<td>
+				<!-- 구매 상점으로 이동하기  -->
 				<a href="">  <h2>제목(상품명) ${p.itemboard_title}</h2> </a>	
 					<h4>구매상점 ${p.store_name }</h4>
+					<h3>구매가격 : ${p.item_price }</h3>
 
 				</td>
 
 				<td>
 			<!-- 	<form action="/Fleamarket3/payment/changeDeliveryChack_gy.do"> -->
 			
-				<form action="changeDeliveryChack_gy.gy">
+				<form action="/fleamarket/payment/buy_list_gy" method="post">
 				<!-- style="display: none;"  나중에 넣어서 추가 할것-->
-					<input type="text" name="purchaseNo" value="${p.item_no}" style="display: none;">
+					<input type="text" name="purchaseNo" value="${p.item_no}" style="display: none;" >
 					<c:if test="${p.item_delivery_state == 3}">
-					<input type="text" id="pageNo" name="pageNo" value=${purchaseModel.requestPage }>
-					<input type="text" id="item_no" name="item_no" value=${p.item_no } >
-					<input type="submit" id="purchaseDetermin" class="purchaseDetermin" value="구매확정버튼" >
+					<input type="text" id="pageNo" name="pageNo" value="${purchaseModel.requestPage }">
+					<input type="text" id="item_no" name="item_no" value="${p.item_no}" >
+					<input type="submit" id="purchaseDetermin" class="btn" value="구매확정버튼" >
 					</c:if>
 				</form>
 					<h2>리뷰확인하기</h2>

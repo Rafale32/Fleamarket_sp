@@ -16,6 +16,7 @@ public class PaymentDAOImpl implements PaymentDAO{
 	
 	private static String namespace = "PaymentMapper";
 	
+	//
 	
 	@Override
 	public void create() throws Exception {
@@ -27,6 +28,26 @@ public class PaymentDAOImpl implements PaymentDAO{
 	public List<PuerchaseDTO_gy> listPuerchase(DeliveryDTO_gy dto) throws Exception {
 		
 		return session.selectList(namespace+".puerchaseList",dto);
+	}
+
+	//구매자 변경
+	@Override
+	public void changDeliverState(DeliveryDTO_gy dto) throws Exception {
+		
+		session.update(namespace +".perchasedeliveryupdate" , dto);
+		
+	}
+	//판매 리스트
+	@Override
+	public List<PuerchaseDTO_gy> listSell(DeliveryDTO_gy dto) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace +".SellList",dto);
+	}
+	
+	//판매자 판매승인
+	@Override
+	public void changDeliverState2(DeliveryDTO_gy dto) throws Exception {
+		session.update(namespace +".perchasedeliveryupdate2" , dto);
 	}
 	
 }

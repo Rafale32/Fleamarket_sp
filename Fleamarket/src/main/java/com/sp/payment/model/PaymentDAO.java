@@ -12,4 +12,14 @@ public interface PaymentDAO {
 	//구매 내역을 뽑는것
 	public List<PuerchaseDTO_gy> listPuerchase(DeliveryDTO_gy dto) throws Exception;
 	
+	//판매내역
+	public List<PuerchaseDTO_gy> listSell(DeliveryDTO_gy dto) throws Exception;
+	
+	
+	//구매자 구매확정, 딜리버리 스테이트 변경
+	public void changDeliverState(DeliveryDTO_gy dto) throws Exception;
+	
+	//판매자 판매승인, 딜리버리 스테이트 변경
+	public void changDeliverState2(DeliveryDTO_gy dto) throws Exception;
+	
 }

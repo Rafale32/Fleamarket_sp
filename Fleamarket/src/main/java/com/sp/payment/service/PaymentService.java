@@ -12,5 +12,13 @@ public interface PaymentService {
 	
 	//구매 내역을 뽑는것
 	public List<PuerchaseDTO_gy> listPuerchase(DeliveryDTO_gy dto) throws Exception;
-
+	
+	//판매내역
+	
+	public List<PuerchaseDTO_gy> listSell(DeliveryDTO_gy dto) throws Exception;
+	
+	public void changDeliverState(DeliveryDTO_gy dto) throws Exception;
+	
+	public void changDeliverState2(DeliveryDTO_gy dto) throws Exception;
+	
 }
