@@ -6,8 +6,20 @@
 
 <mapper namespace="PaymentMapper">
 	<cache />
-	
+
+	<select id="puerchaseList" parameterType="DeliveryDTO_gy" resultType="PuerchaseDTO_gy">
+		select Ite.Itemboard_Title, I.Item_Delivery_State,
+		P.Pay_Price, I.Item_No,
+		S.Store_Name, Img.Thum_Img, P.Pay_Date
+		from item i, Oorder o, Member m, Itemboard ite,Store s , Itemimg img,Pay p
+		where O.Item_No = I.Item_No
+		and I.Item_No = Ite.Item_No
+		and Ite.Store_No = S.Store_No
+		and S.Member_No = M.Member_No
+		and Ite.Itemboard_No = Img.Itemboard_No
+		and P.Oorder_No = O.Oorder_No
+		
+	</select>
 
 
-	
 </mapper>

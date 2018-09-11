@@ -2,6 +2,8 @@ package com.sp.payment.domain;
 
 import java.io.Serializable;
 
+import org.springframework.stereotype.Component;
+
 public class SellProductDTO_gy implements Serializable{
 	
 

@@ -2,6 +2,7 @@ package com.sp.payment.domain;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
 public class PaymentPagingDTO_gy {
 	
 	private List<PuerchaseDTO_gy> list;

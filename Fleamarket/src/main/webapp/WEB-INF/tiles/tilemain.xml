@@ -85,7 +85,7 @@
 	</definition>
 	
 	<definition name="payment/*" extends="left_layout">
-		<put-attribute name="body" value="/WEB-INF/views/product/{1}.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/payment/{1}.jsp" />
 	</definition>
 	
 	<!--END 2. 메뉴가 필요한 템플릿 부모 설정-->

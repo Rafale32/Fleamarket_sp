@@ -3,30 +3,82 @@ package com.sp.payment.domain;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 public class PuerchaseDTO_gy implements Serializable {
 
 
 	
-	String title =""; // 판매 물품의 제목
-	String store_name =""; // 어떤 상점인지
-	int delivery_state; // 배송상태 1 이전, 2 결제완료후 준비중 , 3 배송중(판매자 판매승인) , 4 구매자 구매완료 =거래완료
+	String itemboard_title =""; // 판매 물품의 제목
+	int item_delivery_state; // 배송상태 1 이전, 2 결제완료후 준비중 , 3 배송중(판매자 판매승인) , 4 구매자 구매완료 =거래완료
+	int pay_price;//바
+	
 	int item_no;
+	String store_name =""; // 어떤 상점인지
 	String thum_img =""; // 썸네일 이미지.
-	int price;
 	String pay_date= ""; //날자
 	
 	
 	public PuerchaseDTO_gy(){}
 
 
-	public String getTitle() {
-		return title;
+	
+
+	public PuerchaseDTO_gy(String itemboard_title, int item_delivery_state, int pay_price, int item_no,
+			String store_name, String thum_img, String pay_date) {
+		super();
+		this.itemboard_title = itemboard_title;
+		this.item_delivery_state = item_delivery_state;
+		this.pay_price = pay_price;
+		this.item_no = item_no;
+		this.store_name = store_name;
+		this.thum_img = thum_img;
+		this.pay_date = pay_date;
 	}
 
 
-	public void setTitle(String title) {
-		this.title = title;
+
+
+	public String getItemboard_title() {
+		return itemboard_title;
 	}
+
+
+
+
+	public void setItemboard_title(String itemboard_title) {
+		this.itemboard_title = itemboard_title;
+	}
+
+
+
+
+	public int getItem_delivery_state() {
+		return item_delivery_state;
+	}
+
+
+
+
+	public void setItem_delivery_state(int item_delivery_state) {
+		this.item_delivery_state = item_delivery_state;
+	}
+
+
+
+
+	public int getPay_price() {
+		return pay_price;
+	}
+
+
+
+
+	public void setPay_price(int pay_price) {
+		this.pay_price = pay_price;
+	}
+
+
 
 
 	public String getStore_name() {
@@ -39,15 +91,7 @@ public class PuerchaseDTO_gy implements Serializable {
 	}
 
 
-	public int getDelivery_state() {
-		return delivery_state;
-	}
-
-
-	public void setDelivery_state(int delivery_state) {
-		this.delivery_state = delivery_state;
-	}
-
+	
 
 	public int getItem_no() {
 		return item_no;
@@ -69,14 +113,6 @@ public class PuerchaseDTO_gy implements Serializable {
 	}
 
 
-	public int getPrice() {
-		return price;
-	}
-
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
 
 
 	public String getPay_date() {
@@ -88,18 +124,6 @@ public class PuerchaseDTO_gy implements Serializable {
 		this.pay_date = pay_date;
 	}
 
-
-	public PuerchaseDTO_gy(String title, String store_name, int delivery_state, int item_no, String thum_img, int price,
-			String pay_date) {
-		super();
-		this.title = title;
-		this.store_name = store_name;
-		this.delivery_state = delivery_state;
-		this.item_no = item_no;
-		this.thum_img = thum_img;
-		this.price = price;
-		this.pay_date = pay_date;
-	}
 
 	
 	
