@@ -20,7 +20,7 @@ import com.sp.product.domain.PageModel;
 import com.sp.safepay.domain.DeliveryDTO_jh;
 import com.sp.safepay.domain.ItemImgDTO_jh;
 import com.sp.safepay.domain.PaymentDTO;
-import com.sp.safepay.domain.SpellDTO_jh;
+import com.sp.safepay.domain.OorderDTO;
 
 
 
@@ -30,13 +30,13 @@ public class Bean {
 
 	// 20180816,재헌 DeliveryDTO 추가
 	DeliveryDTO_jh deliveryDTO_jh; // 배송정보
-	// 20180817,재헌 PaymentDTO, SpellDTO_jh 추가
-	PaymentDTO paymentDTO;       // 결제정보
-	SpellDTO_jh spellDTO_jh;     //주문정보
-	ItemDTO itemDTO;             // 상품정보
-	MemManageDTO memManageDTO;   //회원정보
+	// 20180817,재헌 PaymentDTO, OorderDTO 추가
+	PaymentDTO paymentDTO;         // 결제정보
+	OorderDTO oorderDTO;           //주문정보
+	ItemDTO itemDTO;               // 상품정보
+	MemManageDTO memManageDTO;     //회원정보
 	// 20180823,재헌 상품이미지추가
-	ItemImgDTO_jh itemImgDTO_jh; //상품 이미지
+	ItemImgDTO_jh itemImgDTO_jh;   //상품 이미지
 
 	
 	//두연
@@ -89,13 +89,13 @@ public class Bean {
 	public void setPaymentDTO(PaymentDTO paymentDTO) {
 		this.paymentDTO = paymentDTO;
 	}
-	public SpellDTO_jh getSpellDTO_jh() {
-		return spellDTO_jh;
-	}
-	public void setSpellDTO_jh(SpellDTO_jh spellDTO_jh) {
-		this.spellDTO_jh = spellDTO_jh;
-	}
-	public ItemDTO getItemDTO() {
+  public OorderDTO getOorderDTO() {
+    return oorderDTO;
+  }
+  public void setOorderDTO(OorderDTO oorderDTO) {
+    this.oorderDTO = oorderDTO;
+  }
+  public ItemDTO getItemDTO() {
 		return itemDTO;
 	}
 	public void setItemDTO(ItemDTO itemDTO) {

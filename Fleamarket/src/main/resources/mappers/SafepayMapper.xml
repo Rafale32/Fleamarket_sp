@@ -5,6 +5,41 @@
 
 <mapper namespace="SafepayMapper">
   <cache />
+  
+  <!-- 결제정보 가져올 때 -->
+  <!-- 결제에 가져올 구매자 회원정보 20180817 재헌 -->
+  <select id="selectMember" resultType="MemManageDTO">
+    select * from member where member_email = #{member_email}
+<!--    select * from member where member_no = #{member_no} -->
+  </select>
+  
+  <!-- 결제에 가져올 상품정보 및 판매자 정보 20180817 재헌 -->
+  <select id="selectItem" resultType="ItemDTO">
+    select * from itemboard ib, item i, store s
+    where ib.item_no = i.item_no
+    and ib.store_no = s.store_no
+    and ib.item_no = #{item_no}
+  </select>
+  
+  <!-- 주문번호 가져오기 -->
+  <select id="selectOrderNo" resultType="int">
+    select max(oorder_no) from oorder
+  </select>
+  
+  <!-- 결제 정보 넘길 때 -->
+  
+  <!-- 주문정보 입력 -->
+  <insert id="insertOrder" parameterType="OorderDTO">
+    insert into oorder
+    (oorder_no, member_no, item_no, oorder_date)
+    values
+    (#{oorder_no}, #{member_no}, #{item_no}, sysdate)
+  </insert>
+  
+  
+  
+  
+
 
 
 </mapper>
