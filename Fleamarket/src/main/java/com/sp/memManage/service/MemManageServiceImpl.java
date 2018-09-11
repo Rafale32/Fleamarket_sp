@@ -24,19 +24,20 @@ public class MemManageServiceImpl implements MemManageService {
 	}
 	//회원 정보
 	@Override
-	public MemManageDTO detailMember(Integer member_no) throws Exception {
-		return memManageDAO.detail(member_no);
+	public MemManageDTO detailMember(String member_email) throws Exception {
+		return memManageDAO.detail(member_email);
 	}
 	//회원 수정
 	@Override
-	public void updateMember(MemManageDTO memManageDTO) throws Exception {
-		memManageDAO.update(memManageDTO);
-
+	public void updateMember(String member_email) throws Exception {
+		
+		memManageDAO.update(member_email);
+		System.out.println("나는 서비스");
 	}
-//	//회원 삭제
-//	@Override
-//	public void deleteMember(Intger member_no) throws Exception {
-//		memManageDAO.delete(member_no);
-//	}
+	//회원 삭제
+	@Override
+	public void deleteMember(String member_email) throws Exception {
+		memManageDAO.delete(member_email);
+	}
 
 }

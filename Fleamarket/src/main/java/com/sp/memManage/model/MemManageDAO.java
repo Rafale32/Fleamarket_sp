@@ -9,9 +9,9 @@ public interface MemManageDAO {
 	//회원 등록
 	public void register(MemManageDTO memManageDTO)throws Exception;
 	//회원 정보
-	public MemManageDTO detail(Integer member_no)throws Exception;
+	public MemManageDTO detail(String member_email)throws Exception;
 	//회원 수정
-	public void update(MemManageDTO memManageDTO)throws Exception;
-//	//회원 삭제
-//	public void delete(Integer member_no)throws Exception;
+	public void update(String member_email)throws Exception;
+	//회원 삭제
+	public void delete(String member_email)throws Exception;
 }

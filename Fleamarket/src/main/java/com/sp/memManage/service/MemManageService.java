@@ -10,10 +10,10 @@ public interface MemManageService {
 	//회원등록
 	public void registerMember(MemManageDTO memManageDTO) throws Exception;
 	//회원 정보
-	public MemManageDTO detailMember(Integer member_no) throws Exception;
+	public MemManageDTO detailMember(String member_email) throws Exception;
 	//회원 수정
-	public void updateMember(MemManageDTO memManageDTO) throws Exception;
-//	//회원 삭제
-//	public void deleteMember(Integer member_no) throws Exception;
-//	
+	public void updateMember(String member_email) throws Exception;
+	//회원 삭제
+	public void deleteMember(String member_email) throws Exception;
+	
 }

@@ -93,7 +93,7 @@
       <div class="form-group">
         <label for="InputPassword2">비밀번호 확인</label>
         <input type="password" class="form-control"
-          id="InputPassword2" name="member_pw" placeholder="비밀번호 확인"
+          id="InputPassword2" name="member_pw2" placeholder="비밀번호 확인"
           onkeyup="passwordCheckFunction();">
         <h5 style="color: red;" id="passwordCheckMessage"></h5>
         <p class="help-block">비밀번호 확인을 위해 다시한번 입력 해 주세요</p>

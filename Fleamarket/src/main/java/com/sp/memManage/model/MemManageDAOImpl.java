@@ -27,20 +27,20 @@ public class MemManageDAOImpl implements MemManageDAO{
 	}
 	//회원 상세
 	@Override
-	public MemManageDTO detail(Integer member_no) throws Exception {
-		return session.selectOne(namespace+".detailMember", member_no);
+	public MemManageDTO detail(String member_email) throws Exception {
+		return session.selectOne(namespace+".detailMember", member_email);
 	}
 	//회원 수정
 	@Override
-	public void update(MemManageDTO memManageDTO) throws Exception {
-		
-		session.update(namespace+".updateMember", memManageDTO);
+	public void update(String member_email) throws Exception {
+		session.update(namespace+".updateMember", member_email);
+		System.out.println("끄아아아악");
 	}
-//	//회원 삭제
-//	@Override
-//	public void delete(Intger member_no) throws Exception {
-//		session.delete(namespace+".deleteMember", member_no);
-//	}
+	//회원 삭제
+	@Override
+	public void delete(String member_email) throws Exception {
+		session.delete(namespace+".deleteMember", member_email);
+	}
 
 	
 }
