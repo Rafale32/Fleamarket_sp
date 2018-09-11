@@ -14,15 +14,33 @@ public class MemManageDAOImpl implements MemManageDAO{
 	
 	private static String namespace = "MemManageMapper";
 	
-	@Override
-	public void create() throws Exception {
-		//session.insert(namespace + ".create", vo);
-	}
-	
+	//로그인 체크
 	@Override
 	public MemManageDTO checkLogin(MemManageDTO dto) throws Exception {
 		
 		return session.selectOne(namespace+".loginMember", dto);
 	}
+	//회원 등록
+	@Override
+	public void register(MemManageDTO memManageDTO) throws Exception {
+		session.insert(namespace+".registerMember", memManageDTO);
+	}
+	//회원 상세
+	@Override
+	public MemManageDTO detail(Integer member_no) throws Exception {
+		return session.selectOne(namespace+".detailMember", member_no);
+	}
+	//회원 수정
+	@Override
+	public void update(MemManageDTO memManageDTO) throws Exception {
+		
+		session.update(namespace+".updateMember", memManageDTO);
+	}
+//	//회원 삭제
+//	@Override
+//	public void delete(Intger member_no) throws Exception {
+//		session.delete(namespace+".deleteMember", member_no);
+//	}
+
 	
 }

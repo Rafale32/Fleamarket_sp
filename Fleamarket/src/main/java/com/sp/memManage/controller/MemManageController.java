@@ -27,10 +27,7 @@ public class MemManageController {
 		//컨트롤러에서 빈 파일에 필요한 객체 담은후 모델에 빈을 담아서 뷰에서 사용
 		Bean bean = new Bean();
 		
-		
-		
 		model.addAttribute("bean", bean );
-		
 	}
 	
 	@RequestMapping(value = "/loginpost" , method = RequestMethod.POST)
@@ -50,18 +47,32 @@ public class MemManageController {
 		
 		return "redirect:/maindetail/mmain";
 	}
+		
 	
-	
-	
-	
-	
-	@RequestMapping(value = "/joinform", method = RequestMethod.GET)
-	public void joinForm(Model model) {
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public void registerGet(MemManageDTO memManageDTO, Model model) throws Exception {
 		//컨트롤러에서 빈 파일에 필요한 객체 담은후 모델에 빈을 담아서 뷰에서 사용
+		
 		Bean bean = new Bean();
 		
 		model.addAttribute("bean", bean );
 		
 	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String registerPost(MemManageDTO memManageDTO, Model model) throws Exception {
+		//컨트롤러에서 빈 파일에 필요한 객체 담은후 모델에 빈을 담아서 뷰에서 사용
+		Bean bean = new Bean();
+		
+		System.out.println(memManageDTO.getMember_phone() + "post부분");
+		
+		service.registerMember(memManageDTO);
+		
+		model.addAttribute("bean", bean );
+		
+		return "redirect:/memmanage/login";
+	}
+	
+	
 
 }
