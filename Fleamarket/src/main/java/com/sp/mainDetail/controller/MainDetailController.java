@@ -18,6 +18,7 @@ public class MainDetailController {
 		//컨트롤러에서 빈 파일에 필요한 객체 담은후 모델에 빈을 담아서 뷰에서 사용
 		Bean bean = new Bean();
 		
+		
 		model.addAttribute("bean", bean );
 		
 	}
