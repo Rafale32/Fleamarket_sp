@@ -15,7 +15,6 @@ System.out.println("셀체크제대로 왔습니다.");
 
 //구매 DAO에 배달 변경 메소드를 넣었으니 거기껄 씁시다
 PuerchaseDAO_gy dao3 = PuerchaseDAO_gy.getInstance();
-
 System.out.println("제대로 왔습니다.2222");
 dao3.changeDeliverySell(drv);
 System.out.println("메소드 가즈아~!");

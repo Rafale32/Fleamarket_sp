@@ -14,6 +14,7 @@ public interface PaymentDAO {
 	//구매 내역을 뽑는것
 	public List<PuerchaseDTO_gy> listPuerchase(DeliveryDTO_gy dto) throws Exception;
 	
+	
 	//판매내역
 	public List<PuerchaseDTO_gy> listSell(DeliveryDTO_gy dto) throws Exception;
 	

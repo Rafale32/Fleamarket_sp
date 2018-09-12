@@ -15,7 +15,6 @@ public class SellProductDTO_gy implements Serializable{
 	int price;
 	String pay_date= ""; //날자
 	
-	
 	public SellProductDTO_gy(){}
 
 

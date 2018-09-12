@@ -15,6 +15,7 @@ public class MystoreReviewDTO_gy implements Serializable {
 	String itemboard_title;
 	String thum_img;
 	
+	 
 	
 	
 	public MystoreReviewDTO_gy(){}

@@ -10,7 +10,6 @@ $(function(){
 		
 		alert(purchaseNo);
 		
-		
 	}
 	);
 });

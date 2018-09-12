@@ -12,7 +12,6 @@
 	request.setCharacterEncoding("utf-8");
 	
 	//request.setAttribute("purchaseModel", list);
-
 	/* 새로운 코드 */
 /* 	PaymentPagingService_gy daoservice = PaymentPagingService_gy.getInstance();
 	PaymentPagingDTO_gy dao2 = new PaymentPagingDTO_gy();

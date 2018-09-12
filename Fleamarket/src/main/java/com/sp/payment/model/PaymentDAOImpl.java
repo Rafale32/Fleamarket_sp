@@ -19,7 +19,6 @@ public class PaymentDAOImpl implements PaymentDAO{
 	private static String namespace = "PaymentMapper";
 	
 	//
-	
 	@Override
 	public void create() throws Exception {
 		//session.insert(namespace + ".create", vo);

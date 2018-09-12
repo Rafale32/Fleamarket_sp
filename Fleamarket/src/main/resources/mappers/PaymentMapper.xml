@@ -6,7 +6,6 @@
 
 <mapper namespace="PaymentMapper">
 	<cache />
-	
 	<!-- 판매 내역임 잘못 연결함. -->
 	<select id="puerchaseList" parameterType="DeliveryDTO_gy" resultType="PuerchaseDTO_gy">
 		<![CDATA[	  

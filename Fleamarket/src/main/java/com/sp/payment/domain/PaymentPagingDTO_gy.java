@@ -11,6 +11,7 @@ public class PaymentPagingDTO_gy {
 	private int startPage; // 시작페이지
 	private int endPage; // 끝페이지
 	
+	
 	public PaymentPagingDTO_gy(){}
 
 	public PaymentPagingDTO_gy(List<PuerchaseDTO_gy> list, int requestPage, int totalPageCount, int startPage,

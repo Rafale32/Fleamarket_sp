@@ -12,7 +12,6 @@ public class PuerchaseDTO_gy implements Serializable {
 	String itemboard_title =""; // 판매 물품의 제목
 	int item_delivery_state; // 배송상태 1 이전, 2 결제완료후 준비중 , 3 배송중(판매자 판매승인) , 4 구매자 구매완료 =거래완료
 	int item_price;//바
-	
 	int item_no;
 	String store_name =""; // 어떤 상점인지
 	String thum_img =""; // 썸네일 이미지.

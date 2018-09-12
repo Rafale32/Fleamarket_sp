@@ -15,8 +15,7 @@
 	rel="stylesheet" type="text/css" />
 
 <script src="/resources/payment/cangeDeliveryst_gy.js"
-	type="text/javascript">
-	
+	type="text/javascript">	
 </script>
 </head>
 <body>

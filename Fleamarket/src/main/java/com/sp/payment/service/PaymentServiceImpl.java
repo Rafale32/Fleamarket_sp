@@ -16,7 +16,6 @@ public class PaymentServiceImpl implements PaymentService {
 	
 	@Inject
 	private PaymentDAO dao;
-	
 
 	@Override
 	public void regist() throws Exception {

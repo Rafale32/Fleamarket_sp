@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 public class DeliveryDTO_gy {
 // 배송상태 업데이트를 위한 객체  이메일까지
 	
+	
 	int item_no;
 	String member_email;
 	

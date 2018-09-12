@@ -11,7 +11,6 @@
 int item_no = Integer.parseInt(item_no1);
 
 DeliveryDTO_gy drv = new DeliveryDTO_gy();
-
 //확정된 아이템 넘버를 이용해서 사용합니다.
 drv.setItem_no(item_no);
 System.out.println(item_no + " : 아이템 no");
