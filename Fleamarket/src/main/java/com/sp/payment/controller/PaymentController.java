@@ -17,6 +17,8 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.sp.bean.Bean;
 import com.sp.memManage.domain.MemManageDTO;
 import com.sp.payment.domain.DeliveryDTO_gy;
+import com.sp.payment.domain.MystoreDTO_gy;
+import com.sp.payment.domain.MystoreReviewDTO_gy;
 import com.sp.payment.domain.PuerchaseDTO_gy;
 import com.sp.payment.service.PaymentService;
 
@@ -119,6 +121,37 @@ public class PaymentController {
 		List<PuerchaseDTO_gy> list	= service.listSell(dto2);
 		model.addAttribute("list", list);
 	}
+	
+	
+	//내상점 리뷰보기로 가기
+	@RequestMapping(value = "/mystoreReview", method = RequestMethod.GET)
+	public void mystoreReview(Model model,HttpSession session) throws Exception{
+		DeliveryDTO_gy dto2 = new DeliveryDTO_gy();
+		// dto2에 다 넣기
+		MemManageDTO dto0 = (MemManageDTO) session.getAttribute("member");
+		String loginEmail = dto0.getMember_email();
+		dto2.setMember_email(loginEmail);
+		
+		
+		//아이디로 상점 넘버 찾기 이걸로 내상점 리뷰로 가는것이 가능
+		
+		 MystoreDTO_gy storedto= service.SearchMystore(dto2);
+		
+		//서비스 만들기 내 상점에 대한 리뷰 쿼리부터 만들것
+		 System.out.println("가즈아~~1111");
+		 List<MystoreReviewDTO_gy> list = (List<MystoreReviewDTO_gy>) service.MystoreReview(storedto);
+		
+		 System.out.println(list.get(0).getPay_date() + "페데");
+		 
+		 
+		 model.addAttribute("list", list);
+		 
+	}
+	
+	
+	
+	
+	
 	
 	
 /*	@RequestMapping(value = "/img/*", method = RequestMethod.GET)

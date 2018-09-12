@@ -3,6 +3,8 @@ package com.sp.payment.model;
 import java.util.List;
 
 import com.sp.payment.domain.DeliveryDTO_gy;
+import com.sp.payment.domain.MystoreDTO_gy;
+import com.sp.payment.domain.MystoreReviewDTO_gy;
 import com.sp.payment.domain.PuerchaseDTO_gy;
 
 public interface PaymentDAO {
@@ -22,4 +24,8 @@ public interface PaymentDAO {
 	//판매자 판매승인, 딜리버리 스테이트 변경
 	public void changDeliverState2(DeliveryDTO_gy dto) throws Exception;
 	
+	//스토어 찾기, 리뷰 찾기
+	public MystoreDTO_gy SearchMystore(DeliveryDTO_gy dto) throws Exception;
+	
+	public List<MystoreReviewDTO_gy> MystoreReview(MystoreDTO_gy sdto)throws Exception;
 }

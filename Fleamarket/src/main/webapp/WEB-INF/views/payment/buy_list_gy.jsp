@@ -106,7 +106,7 @@
 					<input type="submit" id="purchaseDetermin" class="btn" value="구매확정버튼" >
 					</c:if>
 				</form>
-					<h2>리뷰확인하기</h2>
+					<a href="/fleamarket/payment/mystoreReview"><input class="btn" value="내가쓴리뷰확인하기"></a>
 
 				</td>
 			</tr>

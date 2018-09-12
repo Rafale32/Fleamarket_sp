@@ -6,6 +6,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import com.sp.payment.domain.DeliveryDTO_gy;
+import com.sp.payment.domain.MystoreDTO_gy;
+import com.sp.payment.domain.MystoreReviewDTO_gy;
 import com.sp.payment.domain.PuerchaseDTO_gy;
 
 @Repository
@@ -48,6 +50,18 @@ public class PaymentDAOImpl implements PaymentDAO{
 	@Override
 	public void changDeliverState2(DeliveryDTO_gy dto) throws Exception {
 		session.update(namespace +".perchasedeliveryupdate2" , dto);
+	}
+
+	@Override
+	public MystoreDTO_gy SearchMystore(DeliveryDTO_gy dto) throws Exception {
+		
+		return (MystoreDTO_gy) session.selectOne(namespace + ".SearchMystore", dto);
+	}
+
+	@Override
+	public List<MystoreReviewDTO_gy> MystoreReview(MystoreDTO_gy sdto) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".MystoreReview", sdto);
 	}
 	
 }

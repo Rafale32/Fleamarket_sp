@@ -103,8 +103,8 @@
 					<input type="text" id="item_no" name="item_no" value=${p.item_no } >
 					<input type="submit" id="purchaseDetermin" class="btn" value="판매승인버튼" >
 					</c:if>
-					
-					<h2>리뷰확인버튼</h2>
+					<br>
+					<a href="/fleamarket/payment/mystoreReview"><input class="btn" value="내가 판 물품 리뷰확인하기"></a>
 				</form>
 
 				</td>
