@@ -17,6 +17,7 @@ public class MemManageDTO implements Serializable { // 마이바티스는 DTO �
 	private String member_stop_end; // 정지 종료일
 	private int member_admin; // 관리자 상태확인
 
+	
 	public String getMember_email() {
 		return member_email;
 	}
