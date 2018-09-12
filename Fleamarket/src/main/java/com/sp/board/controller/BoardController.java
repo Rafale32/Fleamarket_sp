@@ -1,25 +1,55 @@
 package com.sp.board.controller;
 
 import java.util.Locale;
+
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.sp.bean.Bean;
+import com.sp.board.domain.BoardDTO;
+import com.sp.board.service.BoardService;
+
+import oracle.net.ano.Service;
 
 
 @Controller
 @RequestMapping("/board/*")
 public class BoardController {
+
+	@Inject
+	private BoardService service;
 	
-	//뷰단의 파일 이름 형식은 각각의 상단의 (상위 이름/하단의 메소드 벨류이름) 으로 결정됨 
-	@RequestMapping(value = "/example", method = RequestMethod.GET)
-	public void home(Locale locale, Model model) {
-		//컨트롤러에서 빈 파일에 필요한 객체 담은후 모델에 빈을 담아서 뷰에서 사용
-		Bean bean = new Bean();
+//	@RequestMapping(value = "/example", method = RequestMethod.GET)
+//	public void home(Locale locale, Model model) {
+//		Bean bean = new Bean();
+//		
+//		bean.setBoard(board);
+//		
+//		model.addAttribute("bean", bean );
+//	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public void registerGET(BoardDTO board, Model model) throws Exception{
+		System.out.println("register Get...........");
+	}
+	
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String registerPOST(BoardDTO board, Model model) throws Exception{
+		System.out.println("Regist Post..........");
+		System.out.println(board.toString());
 		
-		model.addAttribute("bean", bean );
+//		service.regist(board);
+		
+		model.addAttribute("result", "success");
+		
+		return "/board/success";
 		
 	}
+	
+	
+	
 
 }
