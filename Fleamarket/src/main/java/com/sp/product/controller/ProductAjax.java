@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.sp.product.domain.CateSubDTO;
 import com.sp.product.service.AddproductService;
@@ -35,4 +36,24 @@ public class ProductAjax {
 		
 		return entity;
 	}
+	
+	
+	@RequestMapping(value = "/uploadAjax", method = RequestMethod.POST)
+	public ResponseEntity<String> uploadAjax(MultipartFile file)throws Exception{
+		
+		System.out.println(file.getOriginalFilename()+"----파일내임");
+		
+		return new ResponseEntity<>(file.getOriginalFilename(), HttpStatus.CREATED);
+	}
+	
+	
+	@RequestMapping(value = "/displayFile", method = RequestMethod.POST)
+	public ResponseEntity<byte[]> displayFile(MultipartFile file)throws Exception{
+		
+		System.out.println(file.getOriginalFilename()+"----파일내임");
+		
+		return new ResponseEntity<byte[]>( HttpStatus.CREATED);
+	}
+	
+	
 }

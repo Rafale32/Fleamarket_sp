@@ -212,7 +212,50 @@ $(function() {
 
 //이미지 추가시 파일 서버와 디비에 업데이트
 $(function() {
-	$("#inputimgs").change("click", function() {
+	$("#inputimgs").change( function(event) {
 		alert("asdf");
+		
+		event.preventDefault();
+		
+		
+		//var files = event.originalEvent.dataTransfer.files;
+		//var file = files[0];
+
+		var formData = new FormData();
+		
+		formData.append("file", $(".file_tag")[0].files[0]);	
+		
+		
+		$.ajax({
+			  url: '/fleamarket/productajax/uploadAjax',
+			  data: formData,
+			  dataType:'text',
+			  processData: false,
+			  contentType: false,
+			  type: 'POST',
+			  success: function(data){
+				  
+/*				  var fileInfo = getFileInfo(data);
+				  alert(fileInfo);
+				  
+				  var html = template(fileInfo);
+				  
+				  $(".uploadedList").append(html);*/
+				  var str ="";
+				  
+				  if(checkImageType(data)){//getImageLink 메소드에서 썸네일이아닌넘의 파일이름 처리를 해줌 
+					  str ="<div><a href=displayFile?fileName="+getImageLink(data)+">"
+							  +"<img src='/fleamarket/productajax/displayFile?fileName="+data+"'/>"
+							  +"</a><small data-src="+data+">X</small></div>";
+				  }else{
+					  str = "<div><a href='displayFile?fileName="+data+"'>" 
+							  + getOriginalName(data)+"</a>"
+							  +"<small data-src="+data+">X</small></div></div>";
+				  }
+				  
+				  $(".uploadedList").append(str);
+			  }
+		});	
+		
 	});
 });

@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
   <script src="../resources/product/jquery-3.1.0.js"></script>
 	<script src="../resources/product/addProduct.js"></script>
+	<script src="../resources/product/upload.js"></script>
   
     <script type="text/javascript">
 	    function addCheck(e) {
@@ -45,11 +46,14 @@
  		       
  		       
 		      <div id="imgfiles">
-		       		<input type="file" id="inputimgs" name="inputimgs"/>
+		       		<input type="file" class="file_tag" id="inputimgs" name="inputimgs"/>
 		       </div>
 		   <div>
 		       <div class="imgs_wrap">
 		           
+		       </div>
+		       <div class="uploadedList">
+		       
 		       </div>
 		   </div>
 		   
