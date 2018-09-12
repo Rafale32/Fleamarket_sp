@@ -33,7 +33,7 @@
 			<tr><td colspan="2">구매 title: ${p.itemboard_title}</td></tr>
 			<tr><td colspan="2">리뷰 별점 :${p.review_star}</td></tr>
 			<tr>
-				<td colspan="2"><c:choose>
+				<td colspan="2" height="50%"><c:choose>
 
 						<c:when test="${p.review_star == 0}">
 							<img alt="별점이미지"
@@ -69,7 +69,7 @@
 
 				<tr><td colspan="2">리뷰 :${p.review_contents}</td></tr>
 
-			
+			<tr></tr>
 		</c:forEach>
 	</table>
 	</div>
