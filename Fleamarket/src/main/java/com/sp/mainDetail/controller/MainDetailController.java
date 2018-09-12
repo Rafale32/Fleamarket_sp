@@ -19,6 +19,9 @@ public class MainDetailController {
 		Bean bean = new Bean();
 		
 		
+		
+		
+		
 		model.addAttribute("bean", bean );
 		
 	}
