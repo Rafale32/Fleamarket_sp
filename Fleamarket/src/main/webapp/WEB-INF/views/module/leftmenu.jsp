@@ -18,9 +18,9 @@
 			<a href="/fleamarket/product/productlist?member_email=${member.member_email }">내 상품</a>
 			<a href="/fleamarket/product/addproductform">물품등록</a>
 			<a href="#">찜</a><!-- 내가 찜한 상품들 일종의 장바구니 -->
-			<a href="#">상점후기</a>
-			<a href="/fleamarket/jh_gy/gy_view/PaymentPagingAction_gy">구매내역</a>
-			<a href="/fleamarket/jh_gy/gy_view/PaymentPagingSellController_gy">판매내역</a>
+			<a href="/fleamarket/payment/mystoreReview">상점후기</a>
+			<a href="/fleamarket/payment/buy_list_gy">구매내역</a>
+			<a href="/fleamarket/payment/sell_list_gy">판매내역</a>
 			<a href="#">정산</a>
 		</c:when>
 	</c:choose>
