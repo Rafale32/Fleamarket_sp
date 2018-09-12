@@ -27,8 +27,6 @@ import com.sp.payment.service.PaymentService;
 @RequestMapping("/payment/*")
 public class PaymentController {
 	
-	
-	
 	@Inject
 	private PaymentService service;
 	
