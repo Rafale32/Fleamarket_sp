@@ -16,6 +16,7 @@ public class MystoreReviewDTO_gy implements Serializable {
 	String thum_img;
 	
 	
+	
 	public MystoreReviewDTO_gy(){}
 
 

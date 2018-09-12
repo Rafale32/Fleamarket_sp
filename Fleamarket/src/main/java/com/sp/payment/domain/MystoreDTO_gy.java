@@ -14,6 +14,7 @@ public class MystoreDTO_gy implements Serializable {
 	
 	
 	
+	
 	public MystoreDTO_gy(int store_No, String store_Name, String member_Email, String store_Contents) {
 		super();
 		Store_No = store_No;
