@@ -41,8 +41,8 @@
 	<context:component-scan base-package="com.sp.board.model"></context:component-scan>
 	<context:component-scan base-package="com.sp.board.service"></context:component-scan>
 	
-	<context:component-scan base-package="com.sp.mainDetai.model"></context:component-scan>
-	<context:component-scan base-package="com.sp.mainDetai.service"></context:component-scan>
+	<context:component-scan base-package="com.sp.mainDetail.model"></context:component-scan>
+	<context:component-scan base-package="com.sp.mainDetail.service"></context:component-scan>
 	
 	<context:component-scan base-package="com.sp.memManage.model"></context:component-scan>
 	<context:component-scan base-package="com.sp.memManage.service"></context:component-scan>
