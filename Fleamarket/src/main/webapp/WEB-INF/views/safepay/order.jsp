@@ -204,10 +204,14 @@
     <!--     넘긴다 -->
     <!--     소모 포인트 -->
     <fmt:parseNumber var="finalPoint2" value="${finalPoint}" integerOnly="true" />
-    소모 포인트<input type="text" id="finalPoint2" name="finalPoint2" value="${finalPoint2}">
+    소모 포인트<input type="text" id="finalPoint2" name="pay_usepoint" value="${finalPoint2}">
+<%--     <fmt:parseNumber var="finalPoint2" value="${finalPoint}" integerOnly="true" /> --%>
+<%--     소모 포인트<input type="text" id="finalPoint2" name="finalPoint2" value="${finalPoint2}"> --%>
     <!--     총 금액 -->
     <fmt:parseNumber var="total2" value="${total}" integerOnly="true" />
-    총 결제금액<input type="text" id="total2" name="total2" value="${total2}">
+    총 결제금액<input type="text" id="total2" name="pay_price" value="${total2}">
+<%--     <fmt:parseNumber var="total2" value="${total}" integerOnly="true" /> --%>
+<%--     총 결제금액<input type="text" id="total2" name="total2" value="${total2}"> --%>
     <!--     계산된 포인트 -->
     <fmt:parseNumber var="point" value="${startPoint-finalPoint+(total*0.001) }" integerOnly="true" />
     계산된 포인트<input type="text" id="point" name="point" value="${point}">

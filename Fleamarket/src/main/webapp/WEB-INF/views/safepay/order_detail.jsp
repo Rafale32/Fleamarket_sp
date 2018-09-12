@@ -20,7 +20,7 @@
 text
 <br>
      <c:set var="item_no" value="${bean.itemDTO.item_No}"></c:set>
-     <input type="hidden"  name="item_No" value="${item_no}"> 
+     <input type="hidden"  name="item_no" value="${item_no}"> 
   <h1>주문 상세 내역</h1>
   <!-- 주문정보 -->
   <div>
@@ -54,12 +54,12 @@ text
         <!--         <tr><td>결제방법</td><td>신용카드</td></tr> -->
         <tr>
           <td>주문번호</td>
-          <td>T${bean.spellDTO_jh.spell_no+11100}</td>
+          <td>T${bean.oorderDTO.oorder_no+11100}</td>
         </tr>
         <tr>
           <td>주문일자</td>
           <td>
-            <c:set var="s_date" value="${bean.spellDTO_jh.spell_date}"></c:set>
+            <c:set var="s_date" value="${bean.oorderDTO.oorder_date}"></c:set>
             ${fn:substring(s_date, 0, 10)}
           </td>
         </tr>
@@ -119,7 +119,7 @@ text
       <tr>
         <td>사용포인트</td>
         <td>
-          <c:set var="point" value="${bean.paymentDTO.use_point}"></c:set>
+          <c:set var="point" value="${bean.paymentDTO.pay_usepoint}"></c:set>
           <fmt:formatNumber value="${point}"/>원
         </td>
       </tr>
@@ -150,22 +150,22 @@ text
     <table border="1">
       <tr>
         <td>수령인</td>
-        <td>${bean.deliveryDTO_jh.delivery_name}</td>
+        <td>${bean.deliveryDTO.delivery_name}</td>
       </tr>
       <tr>
         <td>연락처</td>
-        <td>${bean.deliveryDTO_jh.delivery_ph}</td>
+        <td>${bean.deliveryDTO.delivery_ph}</td>
       </tr>
       <tr>
         <td rowspan="2">배송지</td>
-        <td>${bean.deliveryDTO_jh.delivery_address}</td>
+        <td>${bean.deliveryDTO.delivery_address}</td>
       </tr>
       <tr>
-        <td>${bean.deliveryDTO_jh.delivery_address2}</td>
+        <td>${bean.deliveryDTO.delivery_address2}</td>
       </tr>
       <tr>
         <td>요청사항</td>
-        <td>${bean.deliveryDTO_jh.delivery_contents}</td>
+        <td>${bean.deliveryDTO.delivery_contents}</td>
       </tr>
     </table>
   </div>

@@ -2,7 +2,9 @@ package com.sp.safepay.model;
 
 import com.sp.memManage.domain.MemManageDTO;
 import com.sp.product.domain.ItemDTO;
+import com.sp.safepay.domain.DeliveryDTO;
 import com.sp.safepay.domain.OorderDTO;
+import com.sp.safepay.domain.PaymentDTO;
 
 public interface SafepayDAO {
 	
@@ -16,4 +18,9 @@ public interface SafepayDAO {
 	
 	public void insertOrder(OorderDTO oorderDTO)throws Exception;
 	
+	public void insertPayment(PaymentDTO paymentDTO)throws Exception;
+	
+	public void insertDelivery(DeliveryDTO deliveryDTO)throws Exception;
+	
+	public void updateItemDeliveryState(ItemDTO itemDTO)throws Exception;
 }

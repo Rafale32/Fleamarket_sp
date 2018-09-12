@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sp.bean.Bean;
 import com.sp.memManage.domain.MemManageDTO;
+import com.sp.product.domain.ItemDTO;
+import com.sp.safepay.domain.DeliveryDTO;
 import com.sp.safepay.domain.OorderDTO;
+import com.sp.safepay.domain.PaymentDTO;
 import com.sp.safepay.service.SafepayService;
 
 
@@ -48,35 +51,55 @@ public class SafepayController {
 	}
 	
 	@RequestMapping(value = "/order", method = RequestMethod.POST)
-	public String orderPOST(OorderDTO oorderDTO,  Locale locale, Model model, HttpServletRequest request) {
-	  System.out.println("orderPOST");
-//	  Bean bean = new Bean();
-	  // 주문정보입력
-//    oorderDTO.setOorder_no(Integer.parseInt(request.getParameter("oorder_no")));
-//    oorderDTO.setOorder_date(request.getParameter("oorder_date"));
-//    oorderDTO.setMember_no(Integer.parseInt(request.getParameter("member_no")));
-//    oorderDTO.setItem_no(Integer.parseInt(request.getParameter("item_No")));
-//	  System.out.println(oorderDTO.getItem_no());
-//	  System.out.println(oorderDTO.getMember_no());
-//	  System.out.println(oorderDTO.getOorder_no());
-//	  System.out.println(oorderDTO.getOorder_date());
-//	  oorderDTO.setMember_no(member_no);
-//    service.insertOrder(oorderDTO);
-	  try {
+	public String orderPOST(
+	    ItemDTO itemDTO,
+	    OorderDTO oorderDTO,
+	    PaymentDTO paymentDTO,
+	    DeliveryDTO deliveryDTO,
+	    Locale locale, Model model,
+	    HttpServletRequest request)throws Exception {
+	  System.out.println("orderPOST"); 
+    
+	    // 주문정보입력
+	    System.out.println("*주문정보*");
+	    System.out.println("주문번호 : " + oorderDTO.getOorder_no());
+	    System.out.println("회원번호 : " + oorderDTO.getMember_no());
+      System.out.println("상품번호 : " + oorderDTO.getItem_no());
+	    System.out.println("주문날짜 : " + oorderDTO.getOorder_date());
+	    
+	    service.insertOrder(oorderDTO);
 
-    } catch (Exception e) {
-      // TODO: handle exception
-    }
+	    // 결제정보입력
+	    System.out.println("*결제정보*");
+	    System.out.println("결제번호 : " + paymentDTO.getPay_no());
+	    System.out.println("결제가격 : " + paymentDTO.getPay_price());
+	    System.out.println("소모포인트 : " + paymentDTO.getPay_usepoint());
+	    System.out.println("결제날짜 : " + paymentDTO.getPay_date());
+	    System.out.println("주문번호 : " + paymentDTO.getOorder_no());
+	    
+	    service.insertPayment(paymentDTO);
+
+	    // 배송정보입력
+	    System.out.println("*배송정보*");
+	    System.out.println("배송번호 : " + deliveryDTO.getDelivery_no());
+	    System.out.println("수 령 인 : " + deliveryDTO.getDelivery_name());
+	    System.out.println("연 락 처 : " + deliveryDTO.getDelivery_ph());
+	    System.out.println("주    소 : " + deliveryDTO.getDelivery_address());
+	    System.out.println("상세주소 : " + deliveryDTO.getDelivery_address2());
+	    System.out.println("요청사항 : " + deliveryDTO.getDelivery_contents());
+	    System.out.println("주문번호 : " + deliveryDTO.getOorder_no());
+	    
+	    service.insertDelivery(deliveryDTO);
+	    
+	    // 상품 배송진행상태 수정
+	    System.out.println("*상품 배송진행상태 수정*");
+	    System.out.println("상품 배송진행상태 : "+itemDTO.getDelivery_state());
+	    
+	    service.updateItemDeliveryState(itemDTO);
+	    
+	    // 멤버 포인트 소모 및 적립 수정
     
 
-	  // 결제정보입력
-
-	  // 배송정보입력
-	  
-	  // 상품 배송진행상태 수정
-	  
-	  // 멤버 포인트 소모 및 적립 수정
-	  
 	  
 	  
 //	  model.addAttribute("bean", bean );

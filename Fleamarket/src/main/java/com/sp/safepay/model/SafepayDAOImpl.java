@@ -7,7 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import com.sp.memManage.domain.MemManageDTO;
 import com.sp.product.domain.ItemDTO;
+import com.sp.safepay.domain.DeliveryDTO;
 import com.sp.safepay.domain.OorderDTO;
+import com.sp.safepay.domain.PaymentDTO;
 
 @Repository
 public class SafepayDAOImpl implements SafepayDAO{
@@ -41,8 +43,19 @@ public class SafepayDAOImpl implements SafepayDAO{
 	 session.insert(namespace+".insertOrder", oorderDTO);
 	}
 	
+	@Override
+	public void insertPayment(PaymentDTO paymentDTO) throws Exception {
+	 session.insert(namespace+".insertPayment", paymentDTO);
+	}
 	
-	
-	
+  @Override
+  public void insertDelivery(DeliveryDTO deliveryDTO) throws Exception {
+    session.insert(namespace+".insertDelivery", deliveryDTO);
+  }	
+  
+  @Override
+  public void updateItemDeliveryState(ItemDTO itemDTO) throws Exception {
+    session.update(namespace+".updateItemDeliveryState", itemDTO);
+  }
 	
 }

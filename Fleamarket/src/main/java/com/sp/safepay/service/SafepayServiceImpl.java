@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 
 import com.sp.memManage.domain.MemManageDTO;
 import com.sp.product.domain.ItemDTO;
+import com.sp.safepay.domain.DeliveryDTO;
 import com.sp.safepay.domain.OorderDTO;
+import com.sp.safepay.domain.PaymentDTO;
 import com.sp.safepay.model.SafepayDAO;
 
 @Service
@@ -34,6 +36,20 @@ public class SafepayServiceImpl implements SafepayService {
 	@Override
 	public void insertOrder(OorderDTO oorderDTO) throws Exception {
 	 dao.insertOrder(oorderDTO);
-	  
 	}
+	
+	@Override
+	public void insertPayment(PaymentDTO paymentDTO) throws Exception {
+	  dao.insertPayment(paymentDTO);
+	}
+	
+	@Override
+	public void insertDelivery(DeliveryDTO deliveryDTO) throws Exception {
+	  dao.insertDelivery(deliveryDTO);
+	}
+	
+  @Override
+  public void updateItemDeliveryState(ItemDTO itemDTO) throws Exception {
+    dao.updateItemDeliveryState(itemDTO);
+  }
 }
